@@ -1,0 +1,62 @@
+@model SamsungWatch.Models.ConditionCreateRequest;
+@{
+    ViewData["Title"] = "Thêm tình trạng mới";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#inputCondition').on('input', function () {
+                var fullName = $(this).val();
+                if (fullName != null && fullName.length > 0) {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $(this).removeClass('is-valid').addClass('is-invalid');
+                }
+            });
+        });
+
+    </script>
+}
+
+<div>
+    <h1 class="mt-4">Thêm tình trạng mới</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+        <li class="breadcrumb-item active"><a asp-controller="Condition" asp-action="Index">Tình trạng</a></li>
+        <li class="breadcrumb-item active">Thêm tình trạng mới</li>
+    </ol>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Điền thông tin tình trạng</h6>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Create">
+
+                <div class="mb-3">
+                    <label for="validationServer01" class="form-label">Nhập tên tình trạng</label>
+                    <input type="text" asp-for="ConditionName" autocomplete="off" class="form-control"
+                        id="inputCondition" placeholder="vd: Fullbox, Đẹp keng" required>
+                    <div class="invalid-feedback">
+                        Vui lòng nhập tình trạng.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="validationServer01" class="form-label me-3">Mã màu</label>
+                    <input type="color" asp-for="ConditionColor" class="form-control form-control-color"
+                        id="exampleConditionInput" value="#C0E1F6" title="Chọn tình trạng">
+                </div>
+
+
+                <h5>@ViewBag.err</h5>
+                <div class="form-group">
+                    <input type="submit" value="Thêm tình trạng mới" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

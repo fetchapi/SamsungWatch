@@ -1,0 +1,28 @@
+@model List<SamsungWatch.Data.Entities.Category>
+@{
+    ViewData["Title"] = "Category Manager";
+}
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Danh mục</th>
+                <th scope="col">Tiêu đề Seo URL</th>
+                <th scope="col">Danh mục cha</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.CategoryName</td>
+                    <td>@category.SeoAlias</td>
+                    <td>@(category.ParentId != 0 ? Model.FirstOrDefault(c => c.CategoryId ==
+                            category.ParentId)?.CategoryName : "-")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

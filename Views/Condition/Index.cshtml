@@ -1,0 +1,117 @@
+@model List<SamsungWatch.Data.Entities.Condition>
+@{
+    ViewData["Title"] = "Quản lý tình trạng";
+}
+
+<style>
+    .div-hover {
+        transition: .3s;
+        text-decoration: none;
+    }
+
+    .div-hover:hover {
+        transform: scale(2, 1);
+        transform-origin: left;
+        -webkit-transform: scale(10, 10);
+        box-shadow: 0 0.5rem 0.75rem #d9d9d9 !important;
+    }
+</style>
+
+<div>
+    <a asp-controller="Condition" asp-action="Create" class="btn btn-primary">Thêm tình trạng mới</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col">Tuỳ chọn</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="div-hover" style="background:@item.ConditionColor; height: 1rem; width: 1rem"></div>
+                    </td>
+                    <td>@item.ConditionName</td>
+                    <td>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal_@item.ConditionId">
+                            <i class="bi bi-file-earmark-x"></i>
+                        </button>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#editModal_@item.ConditionId">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <div class="modal fade" id="deleteModal_@item.ConditionId" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Bạn có chắn muốn xoá -
+                                    [@item.ConditionName]</h1>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+
+                                <form asp-action="Delete">
+                                    <input value="@item.ConditionId" name="id" type="hidden" />
+                                    <input type="submit" value="Xác nhận" class="btn btn-danger" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="editModal_@item.ConditionId" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Chỉnh sửa</h1>
+                            </div>
+                            <form asp-action="Update">
+                                <div class="modal-body">
+
+                                    <input value="@item.ConditionId" name="id" type="hidden" />
+
+                                    <div class="mb-3">
+                                        <label for="validationServer01" class="form-label">Nhập tên tình trạng</label>
+                                        <input name="ConditionName" type="text" asp-for="@item.ConditionName"
+                                            autocomplete="off" class="form-control" id="inputCondition"
+                                            placeholder="vd: Fullbox, Đẹp keng" required>
+                                        <div class="invalid-feedback">
+                                            Vui lòng nhập tình trạng.
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="validationServer01" class="form-label me-3">Mã màu</label>
+                                        <input name="ConditionColor" type="color" asp-for="@item.ConditionColor"
+                                            class="form-control form-control-color" id="exampleConditionInput"
+                                            value="@item.ConditionColor" title="Chọn tình trạng">
+                                    </div>
+
+
+                                    <h5>@ViewBag.err</h5>
+
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                    <input type="submit" value="Xác nhận" class="btn btn-success" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </tbody>
+    </table>
+</div>

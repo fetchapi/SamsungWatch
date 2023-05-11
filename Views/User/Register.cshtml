@@ -1,0 +1,139 @@
+@model SamsungWatch.Models.RegisterRequest;
+@{
+    ViewData["Title"] = "Đăng ký";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script>
+        function isValidEmail(email) {
+            var emailRegex = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+            return emailRegex.test(email);
+        }
+
+        $(document).ready(function () {
+            $('#inputEmail').on('input', function () {
+                var email = $(this).val();
+                if (isValidEmail(email) && email.length > 0) {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $(this).removeClass('is-valid').addClass('is-invalid');
+                }
+            });
+        });
+
+
+        $(document).ready(function () {
+            $('#inputPass').on('input', function () {
+                var pass = $(this).val();
+                if (pass.length >= 5 && pass.length <= 20) {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $(this).removeClass('is-valid').addClass('is-invalid');
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('#inputPassCF').on('input', function () {
+                var passCF = $(this).val();
+                var pass = $('#inputPass').val();
+                if (pass == passCF) {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $(this).removeClass('is-valid').addClass('is-invalid');
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('#inputUserName').on('input', function () {
+                var userName = $(this).val();
+                if (userName != null && userName.length >= 5 && userName.length <= 20) {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $(this).removeClass('is-valid').addClass('is-invalid');
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('#inputFullName').on('input', function () {
+                var fullName = $(this).val();
+                if (fullName != null && fullName.length > 0) {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $(this).removeClass('is-valid').addClass('is-invalid');
+                }
+            });
+        });
+    </script>
+}
+
+<h1 class="mt-4">Đăng ký</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+    <li class="breadcrumb-item active">Đăng ký</li>
+</ol>
+<div class="card shadow col-md-6 mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Điền thông tin tài khoản</h6>
+    </div>
+
+    <div class="card-body">
+        <form asp-action="Register">
+
+            <div class="mb-3">
+                <label for="validationServer01" class="form-label">Địa chỉ email</label>
+                <input type="text" autocomplete="off" class="form-control" id="inputEmail"
+                    placeholder="vd: name@example.com" required>
+                <div class="invalid-feedback">
+                    Vui lòng nhập đúng định dạng email.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="validationServer01" class="form-label">Tên đăng nhập</label>
+                <input type="text" autocomplete="off" class="form-control" id="inputUserName"
+                    placeholder="vd: nguyenvana123" maxlength="20" minlength="5" required>
+                <div class="invalid-feedback">
+                    Vui lòng nhập tên đăng nhập từ 5 - 20 ký tự.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="validationServer01" class="form-label">Họ tên</label>
+                <input type="text" autocomplete="off" class="form-control" id="inputFullName"
+                    placeholder="vd: Nguyễn Văn A" maxlength="50" required>
+                <div class="invalid-feedback">
+                    Vui lòng nhập họ tên.
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="mb-3">
+                <label for="validationServer01" class="form-label">Mật khẩu</label>
+                <input type="password" autocomplete="off" class="form-control" id="inputPass"
+                    placeholder="vd: NguyenVanA@123" minlength="5" maxlength="20" required>
+                <div class="invalid-feedback">
+                    Vui lòng nhập mật khẩu từ 5 - 20 ký tự.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="validationServer01" class="form-label">Mật khẩu xác nhận</label>
+                <input type="password" autocomplete="off" class="form-control" id="inputPassCF"
+                    placeholder="vd: NguyenVanA@123" minlength="5" maxlength="20" required>
+                <div class="invalid-feedback">
+                    Mật khẩu xác nhận không trùng khớp.
+                </div>
+            </div>
+
+
+            <h5>@ViewBag.err</h5>
+            <div class="form-group">
+                <input type="submit" value="Đăng ký tài khoản" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

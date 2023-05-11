@@ -1,0 +1,41 @@
+@model List<SamsungWatch.Data.Entities.Color>
+@{
+    ViewData["Title"] = "Color Manager";
+}
+
+<style>
+    .div-hover {
+        transition: .3s;
+        text-decoration: none;
+    }
+
+    .div-hover:hover {
+        transform: scale(2, 1);
+        transform-origin: left;
+        -webkit-transform: scale(10, 10);
+        box-shadow: 0 0.5rem 0.75rem #d9d9d9 !important;
+    }
+</style>
+
+<div>
+    <a asp-controller="Color" asp-action="Create" class="btn btn-primary">Thêm màu sắc mới</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="div-hover" style="background:@item.ColorCode; height: 1rem; width: 1rem"></div>
+                    </td>
+                    <td>@item.ColorName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

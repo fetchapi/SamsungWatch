@@ -1,0 +1,22 @@
+@model List<SamsungWatch.Data.Entities.Size>
+@{
+    ViewData["Title"] = "Size Manager";
+}
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Kích thước</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SizeName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

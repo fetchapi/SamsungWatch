@@ -1,0 +1,26 @@
+@model List<SamsungWatch.Data.Entities.Status>
+@{
+    ViewData["Title"] = "Status Manager";
+}
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div style="background:@item.StatusColor; height: 1rem; width: 1rem"></div>
+                    </td>
+                    <td>@item.StatusName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,62 @@
+@model SamsungWatch.Models.ColorCreateRequest;
+@{
+    ViewData["Title"] = "Thêm màu mới";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#inputColor').on('input', function () {
+                var fullName = $(this).val();
+                if (fullName != null && fullName.length > 0) {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $(this).removeClass('is-valid').addClass('is-invalid');
+                }
+            });
+        });
+
+    </script>
+}
+
+<div>
+    <h1 class="mt-4">Thêm màu mới</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+        <li class="breadcrumb-item active"><a asp-controller="Color" asp-action="Index">Màu sắc</a></li>
+        <li class="breadcrumb-item active">Thêm màu mới</li>
+    </ol>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Điền thông tin màu sắc</h6>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Create">
+
+                <div class="mb-3">
+                    <label for="validationServer01" class="form-label">Nhập tên màu sắc</label>
+                    <input type="text" asp-for="ColorName" autocomplete="off" class="form-control" id="inputColor"
+                        placeholder="vd: Xanh lam" required>
+                    <div class="invalid-feedback">
+                        Vui lòng nhập màu sắc.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="validationServer01" class="form-label me-3">Mã màu</label>
+                    <input type="color" asp-for="ColorCode" class="form-control form-control-color"
+                        id="exampleColorInput" value="#C0E1F6" title="Chọn màu sắc">
+                </div>
+
+
+                <h5>@ViewBag.err</h5>
+                <div class="form-group">
+                    <input type="submit" value="Thêm màu sắc mới" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
