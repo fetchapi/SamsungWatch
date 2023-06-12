@@ -9,18 +9,18 @@ namespace SamsungWatch.Data;
 
 public class DbInitializer
 {
-  private readonly SamsungWatchDbContext _context;
+    private readonly SamsungWatchDbContext _context;
 
-  public DbInitializer(SamsungWatchDbContext context)
-  {
-    _context = context;
-  }
-
-  public async Task Seed()
-  {
-    if (!_context.Users.Any())
+    public DbInitializer(SamsungWatchDbContext context)
     {
-      _context.Users.AddRange(new List<User>()
+        _context = context;
+    }
+
+    public async Task Seed()
+    {
+        if (!_context.Users.Any())
+        {
+            _context.Users.AddRange(new List<User>()
     {
       new User
         {
@@ -33,278 +33,254 @@ public class DbInitializer
           Password = "FE9989D5012230C4C8DD97BD7D209DEF"
         }
             });
-    }
-    await _context.SaveChangesAsync();
+        }
 
 
-    await _context.SaveChangesAsync();
-    if (!_context.Colors.Any())
-    {
-      _context.Colors.AddRange(new List<Color>()
+        if (!_context.Colors.Any())
+        {
+            _context.Colors.AddRange(new List<Color>()
       {
         new Color
         {
-          ColorId = 1,
           ColorName = "Trắng bạc",
           ColorCode = "#CECECE"
         },
         new Color
         {
-          ColorId = 2,
           ColorName = "Trắng",
           ColorCode = "#FFFFFF"
         },
 
         new Color
         {
-          ColorId = 3,
           ColorName = "Đen",
           ColorCode = "#000000"
         },
 
         new Color
         {
-          ColorId = 4,
           ColorName = "Vàng hồng",
           ColorCode = "#E1AE8F"
         },
 
         new Color
         {
-          ColorId = 5,
           ColorName = "Xanh đen",
           ColorCode = "#00401F"
         },
 
         new Color
         {
-          ColorId = 6,
           ColorName = "Tím",
           ColorCode = "#AC89D8"
         },
       });
-    }
-    await _context.SaveChangesAsync();
+        }
 
-    if (!_context.Conditions.Any())
-    {
-      _context.Conditions.AddRange(new List<Condition>()
+        if (!_context.Conditions.Any())
+        {
+            _context.Conditions.AddRange(new List<Condition>()
       {
         new Condition
         {
-            ConditionId = 1,
             ConditionName = "FullBox, Đẹp keng",
             ConditionColor = "#D4EDBD"
         },
 
         new Condition
         {
-            ConditionId = 2,
             ConditionName = "NoBox, Đẹp keng",
             ConditionColor = "#C0E1F6"
         },
 
         new Condition
         {
-            ConditionId = 3,
             ConditionName = "FullBox, Xước nhẹ",
             ConditionColor = "#FFE5A1"
         },
 
         new Condition
         {
-            ConditionId = 4,
             ConditionName = "NoBox, Xước nhẹ",
             ConditionColor = "#FFCFC9"
         },
 
         new Condition
         {
-            ConditionId = 5,
             ConditionName = "Khác",
             ConditionColor = "#E9EAED"
         }
             });
-    }
-    await _context.SaveChangesAsync();
+        }
 
-    if (!_context.Sizes.Any())
-    {
-      _context.Sizes.AddRange(new List<Size>()
+        if (!_context.Sizes.Any())
+        {
+            _context.Sizes.AddRange(new List<Size>()
       {
         new Size
         {
-            SizeId = 1,
             SizeName = "40mm"
         },
 
        new Size
         {
-            SizeId = 2,
             SizeName = "41mm"
         },
 
        new Size
         {
-            SizeId = 3,
             SizeName = "42mm"
         },
 
        new Size
         {
-            SizeId = 4,
             SizeName = "44mm"
         },
 
        new Size
         {
-            SizeId = 5,
             SizeName = "45mm"
         },
 
        new Size
         {
-            SizeId = 6,
             SizeName = "46mm"
         }
       });
-    }
+        }
 
 
 
-    await _context.SaveChangesAsync();
-    if (!_context.Statuses.Any())
-    {
-      _context.Statuses.AddRange(new List<Status>()
+        if (!_context.Statuses.Any())
+        {
+            _context.Statuses.AddRange(new List<Status>()
             {
                new Status
         {
-            StatusId = 1,
             StatusName = "Đã chốt, chưa cọc",
             StatusColor = "#FFCFC9"
         },
 
        new Status
         {
-            StatusId = 2,
             StatusName = "Đã chốt, có cọc",
             StatusColor = "#FFE5A1"
         },
 
        new Status
         {
-            StatusId = 3,
             StatusName = "Đang gửi",
             StatusColor = "#D4EDBD"
         },
 
        new Status
         {
-            StatusId = 4,
             StatusName = "Đã giao",
             StatusColor = "#E6CFF3"
         },
 
        new Status
         {
-            StatusId = 5,
             StatusName = "Đã nhận tiền",
             StatusColor = "#C0E1F6"
         },
 
        new Status
         {
-            StatusId = 6,
             StatusName = "Sẵn hàng Hà Nội",
             StatusColor = "#E9EAED"
         },
 
        new Status
         {
-            StatusId = 7,
             StatusName = "Sẵn hàng TP.HCM",
             StatusColor = "#C6DCE1"
         },
 
        new Status
         {
-            StatusId = 8,
             StatusName = "Đang về",
             StatusColor = "#FFC8AB"
         },
 
        new Status
         {
-            StatusId = 9,
             StatusName = "Trả hàng",
             StatusColor = "#A3A4A9"
         }
             });
-    }
-    await _context.SaveChangesAsync();
+        }
 
-    if (!_context.Categories.Any())
-    {
-      _context.Categories.AddRange(new List<Category>()
+        if (!_context.Categories.Any())
+        {
+            var category1 = new Category
             {
-                 new Category
-        {
-            CategoryId = 1,
-            CategoryName = "Samsung Galaxy Watch 4 Series",
-            SeoAlias = "samsung-galaxy-watch-4-series",
-            ParentId = 0
-        },
+                CategoryName = "Samsung Galaxy Watch 4 Series",
+                SeoAlias = "samsung-galaxy-watch-4-series",
+                sortOrder = 0,
+                ParentId = null
+            };
+            _context.Categories.Add(category1);
+            _context.SaveChanges();
 
-        new Category
-        {
-            CategoryId = 2,
-            CategoryName = "Samsung Galaxy Watch 5 Series",
-            SeoAlias = "samsung-galaxy-watch-5-series",
-            ParentId = 0
-        },
+            var category2 = new Category
+            {
+                CategoryName = "Samsung Galaxy Watch 5 Series",
+                SeoAlias = "samsung-galaxy-watch-5-series",
+                sortOrder = 0,
+                ParentId = null
+            };
+            _context.Categories.Add(category2);
+            _context.SaveChanges();
 
-        new Category
-        {
-            CategoryId = 3,
-            CategoryName = "Samsung Galaxy Watch 4",
-            SeoAlias = "samsung-galaxy-watch-4",
-            ParentId = 0
-        },
+            var category3 = new Category
+            {
+                CategoryName = "Samsung Galaxy Watch 4",
+                SeoAlias = "samsung-galaxy-watch-4",
+                sortOrder = 1,
+                ParentId = category1.CategoryId
+            };
+            _context.Categories.Add(category3);
+            _context.SaveChanges();
 
-        new Category
-        {
-            CategoryId = 4,
-            CategoryName = "Samsung Galaxy Watch 4 Classic",
-            SeoAlias = "samsung-galaxy-watch-4-classic",
-            ParentId = 0
-        },
+            var category4 = new Category
+            {
+                CategoryName = "Samsung Galaxy Watch 4 Classic",
+                SeoAlias = "samsung-galaxy-watch-4-classic",
+                sortOrder = 1,
+                ParentId = category1.CategoryId
+            };
+            _context.Categories.Add(category4);
+            _context.SaveChanges();
 
-        new Category
-        {
-            CategoryId = 5,
-            CategoryName = "Samsung Galaxy Watch 5",
-            SeoAlias = "samsung-galaxy-watch-5",
-            ParentId = 0
-        },
+            var category5 = new Category
+            {
+                CategoryName = "Samsung Galaxy Watch 5",
+                SeoAlias = "samsung-galaxy-watch-5",
+                sortOrder = 1,
+                ParentId = category2.CategoryId
+            };
+            _context.Categories.Add(category5);
+            _context.SaveChanges();
 
-        new Category
+            var category6 = new Category
+            {
+                CategoryName = "Samsung Galaxy Watch 5 Pro",
+                SeoAlias = "samsung-galaxy-watch-5-pro",
+                sortOrder = 1,
+                ParentId = category2.CategoryId
+            };
+            _context.Categories.Add(category6);
+            _context.SaveChanges();
+        }
+
+        if (!_context.Products.Any())
         {
-            CategoryId = 6,
-            CategoryName = "Samsung Galaxy Watch 5 Pro",
-            SeoAlias = "samsung-galaxy-watch-5-pro",
-            ParentId = 0
-        },
+            _context.Products.AddRange(new List<Product>()
+            {
+
             });
+        }
+        await _context.SaveChangesAsync();
     }
-    await _context.SaveChangesAsync();
-
-    if (!_context.Products.Any())
-    {
-      _context.Products.AddRange(new List<Product>()
-      {
-
-      });
-    }
-    await _context.SaveChangesAsync();
-  }
 }

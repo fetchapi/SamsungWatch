@@ -5,7 +5,7 @@
 namespace SamsungWatch.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,6 +18,7 @@ namespace SamsungWatch.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     SeoAlias = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    sortOrder = table.Column<int>(type: "int", nullable: false),
                     ParentId = table.Column<int>(type: "int", nullable: true, defaultValue: 0)
                 },
                 constraints: table =>

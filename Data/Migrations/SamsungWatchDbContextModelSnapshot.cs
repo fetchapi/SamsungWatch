@@ -45,6 +45,9 @@ namespace SamsungWatch.Data.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<int>("sortOrder")
+                        .HasColumnType("int");
+
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories", (string)null);

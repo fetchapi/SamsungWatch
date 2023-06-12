@@ -9,69 +9,69 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SamsungWatch
 build_property.RootNamespace = SamsungWatch
-build_property.ProjectDir = D:\ASP_NET_CORE\SSW_NPD\SamsungWatch\
+build_property.ProjectDir = /Users/daisy/Desktop/SamsungWatch/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\ASP_NET_CORE\SSW_NPD\SamsungWatch
+build_property.MSBuildProjectDirectory = /Users/daisy/Desktop/SamsungWatch
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Category/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+[/Users/daisy/Desktop/SamsungWatch/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Color/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcQ3JlYXRlLmNzaHRtbA==
+[/Users/daisy/Desktop/SamsungWatch/Views/Color/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29sb3IvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Color/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcSW5kZXguY3NodG1s
+[/Users/daisy/Desktop/SamsungWatch/Views/Color/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29sb3IvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Condition/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZGl0aW9uXENyZWF0ZS5jc2h0bWw=
+[/Users/daisy/Desktop/SamsungWatch/Views/Condition/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29uZGl0aW9uL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Condition/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZGl0aW9uXEluZGV4LmNzaHRtbA==
+[/Users/daisy/Desktop/SamsungWatch/Views/Condition/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29uZGl0aW9uL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/Users/daisy/Desktop/SamsungWatch/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/Users/daisy/Desktop/SamsungWatch/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/Users/daisy/Desktop/SamsungWatch/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/daisy/Desktop/SamsungWatch/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Size/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l6ZVxJbmRleC5jc2h0bWw=
+[/Users/daisy/Desktop/SamsungWatch/Views/Size/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2l6ZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Status/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdHVzXEluZGV4LmNzaHRtbA==
+[/Users/daisy/Desktop/SamsungWatch/Views/Status/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RhdHVzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/User/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
+[/Users/daisy/Desktop/SamsungWatch/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/daisy/Desktop/SamsungWatch/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/daisy/Desktop/SamsungWatch/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE/SSW_NPD/SamsungWatch/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-43742ecbwn
+[/Users/daisy/Desktop/SamsungWatch/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-e4g6jrdepe

@@ -10,6 +10,7 @@
                 <th scope="col">Danh mục</th>
                 <th scope="col">Tiêu đề Seo URL</th>
                 <th scope="col">Danh mục cha</th>
+                <th scope="col">Thứ tự</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,7 @@
                     <td>@category.SeoAlias</td>
                     <td>@(category.ParentId != 0 ? Model.FirstOrDefault(c => c.CategoryId ==
                             category.ParentId)?.CategoryName : "-")</td>
+                    <td>@category.sortOrder</td>
                 </tr>
             }
         </tbody>

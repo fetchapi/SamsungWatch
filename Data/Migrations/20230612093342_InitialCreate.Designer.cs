@@ -12,8 +12,8 @@ using SamsungWatch.Data.EF;
 namespace SamsungWatch.Data.Migrations
 {
     [DbContext(typeof(SamsungWatchDbContext))]
-    [Migration("20230612084936_Initial")]
-    partial class Initial
+    [Migration("20230612093342_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,6 +47,9 @@ namespace SamsungWatch.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("sortOrder")
+                        .HasColumnType("int");
 
                     b.HasKey("CategoryId");
 
