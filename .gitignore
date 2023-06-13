@@ -19,7 +19,7 @@ nupkg/
 
 # Code Rush
 .cr/
-
+/.history
 # User-specific files
 *.suo
 *.user

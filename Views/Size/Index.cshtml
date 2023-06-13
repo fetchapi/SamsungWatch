@@ -4,10 +4,15 @@
 }
 
 <div>
+    <a asp-controller="Size" asp-action="Create" class="btn btn-primary">Thêm size</a>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">Kích thước</th>
+                <th scope="col">Sửa</th>
+                <th scope="col">Xóa</th>
+
+
             </tr>
         </thead>
         <tbody>
@@ -15,7 +20,75 @@
             {
                 <tr>
                     <td>@item.SizeName</td>
+                     <td>
+                        <a asp-controller="Size" asp-action="Delete/@item.SizeId" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal_@item.SizeId">
+                            <i class="bi bi-file-earmark-x"></i>
+                        </a>
+                        <a asp-controller="Size" asp-action="Update/@item.SizeId" type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#editModal_@item.SizeId">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                    </td>
+
                 </tr>
+                 <div class="modal fade" id="deleteModal_@item.SizeId" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Bạn có chắn muốn xoá -
+                                    [@item.SizeName]</h1>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+
+                                <form asp-action="Delete">
+                                    <input value="@item.SizeId" name="id" type="hidden" />
+                                    <input type="submit" value="Xác nhận" class="btn btn-danger" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="editModal_@item.SizeId" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Chỉnh sửa</h1>
+                            </div>
+                            <form asp-action="Update">
+                                <div class="modal-body">
+
+                                    <input value="@item.SizeId" name="id" type="hidden" />
+
+                                    <div class="mb-3">
+                                        <label for="validationServer01" class="form-label">Nhập Kích thước</label>
+                                        <input name="SizeName" type="text" asp-for="@item.SizeName"
+                                            autocomplete="off" class="form-control" id="inputCondition"
+                                            placeholder="vd: 60mm" required>
+                                        <div class="invalid-feedback">
+                                            Vui lòng nhập kích thước.
+                                        </div>
+                                    </div>
+
+                                
+
+                                    <h5>@ViewBag.err</h5>
+
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                    <input type="submit" value="Xác nhận" class="btn btn-success" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             }
         </tbody>
     </table>
